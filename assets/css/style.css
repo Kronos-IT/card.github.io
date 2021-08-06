@@ -365,10 +365,10 @@ html {
 }
 
 body {
-    background-color: #181818;
+    overflow: hidden;
+    background-color: #19A1AE;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.4rem;
-    color: #fff;
 }
 
 *,
@@ -377,39 +377,143 @@ body {
     box-sizing: border-box;
 }
 
-/* Blocks */
 .page {
     overflow: hidden;
 }
 
-.header {
-    width: calc(100% - 300px);
-    height: 30px;
-    background-color: #444;
-    position: fixed;
+.page::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(/assets/images/bodybg.png) no-repeat;
+    background-size: contain;
+}
+
+.page::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
     top: 0;
-    right: 0;
-    z-index: 1000;
+    background: url(/assets/images/bodybg.png) no-repeat;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    background-size: contain;
 }
 
-.sidebar {
-    width: 300px;
-    height: 100vh;
-    background-color: #ccc;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.main {
-    padding-top: 10rem;
-    padding-left: 300px;
-}
-
+/* Blocks */
 .container {
-    max-width: 70rem;
+    max-width: 140rem;
     margin: 0 auto;
     padding-left: 5rem;
     padding-right: 5rem;
+    position: relative;
+}
+
+.card {
+    padding-top: 173px;
+    padding-bottom: 173px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.card-profile {
+    padding-bottom: 24px;
+    display: inline-block;
+    text-align: center;
+    max-width: 100%;
+    width: 350px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+.card-profile__background {
+    display: inline-block;
+    max-width: 100%;
+    width: 350px;
+    height: 140px;
+}
+
+.card-profile__avatar {
+    max-width: 100%;
+    margin-top: -50px;
+    display: inline-block;
+    width: 96px;
+    height: 96px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+.card-profile-info {
+    margin-top: 24px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.card-profile-info__name {
+    color: #2E3349;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.card-profile-info__age {
+    margin-left: 8.5px;
+    color: #6B7082;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.card-profile-city__text {
+    color: #6B7082;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.card-profile-footer {
+    margin-top: 28px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.card-profile-footer-wrap {
+    margin-left: 46px;
+}
+
+.card-profile-footer-wrap:first-child {
+    margin-left: 0;
+}
+
+.card-profile-footer-wrap__total {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: bold;
+    color: #2E3349;
+}
+
+.card-profile-footer-wrap__desc {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 10px;
+    color: #6B7082;
 }
