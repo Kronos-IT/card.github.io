@@ -364,15 +364,10 @@ textarea {
   padding: 0.2em 0;
 }
 
-html {
-  font-size: 62.5%;
-}
-
 body {
   overflow: hidden;
   background-color: #19A1AE;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.4rem;
 }
 
 *,
@@ -407,20 +402,15 @@ body {
 
 /* Blocks */
 .container {
-  max-width: 140rem;
+  max-width: 1400px;
   margin: 0 auto;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  position: relative;
+  padding: 0px 25px;
 }
 
 .card {
-  padding-top: 173px;
-  padding-bottom: 173px;
+  margin: 174px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
   position: relative;
   z-index: 1;
 }
@@ -428,24 +418,18 @@ body {
   padding-bottom: 24px;
   display: inline-block;
   text-align: center;
-  max-width: 100%;
   width: 350px;
   border-radius: 15px;
   background-color: #fff;
 }
-.card-profile__background {
-  display: inline-block;
-  max-width: 100%;
-  width: 350px;
-}
 .card-profile__avatar {
-  max-width: 100%;
   margin-top: -50px;
   display: inline-block;
   width: 96px;
   height: 96px;
   border: 5px solid #fff;
   border-radius: 50%;
+  object-fit: cover;
 }
 .card-profile-info {
   margin-top: 24px;
@@ -495,4 +479,17 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 10px;
   color: #6B7082;
+}
+
+@media (max-width: 375px) {
+  .card {
+    margin: 146px 0;
+  }
+  .card-profile {
+    width: 326px;
+  }
+  .card-profile__background {
+    max-width: 100%;
+    width: 326px;
+  }
 }
