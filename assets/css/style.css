@@ -421,8 +421,16 @@ body {
     display: inline-block;
     text-align: center;
     width: 350px;
+    overflow: hidden;
     border-radius: 15px;
     background-color: #fff;
+}
+
+.card-profile__background {
+    display: inline-block;
+    width: 350px;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .card-profile__avatar {
